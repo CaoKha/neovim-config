@@ -36,10 +36,10 @@ keymap("n", "<S-Left>", ":bprevious<CR>", opts)
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
-keymap("v", "p", '"_dP', opts)
+-- keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -49,6 +49,10 @@ keymap("i", "jk", "<ESC>", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+keymap("n", "<A-Down>", "<Esc>:m .+1<CR>", opts)
+keymap("n", "<A-Up>", "<Esc>:m .-2<CR>", opts)
+keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Plugins --
 
@@ -56,7 +60,7 @@ keymap("v", ">", ">gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
@@ -79,3 +83,5 @@ keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
+--smart_quit
+keymap("n", "<leader>q", "<cmd>lua require('user.functions').smart_quit()<CR>", opts)
