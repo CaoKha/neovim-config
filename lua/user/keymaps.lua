@@ -36,21 +36,21 @@ keymap("n", "<S-Left>", ":bprevious<CR>", opts)
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
-keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<leader>c", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
 -- keymap("v", "p", '"_dP', opts)
 
 -- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+keymap("i", "<A-Down>", "<ESC>:m .+1<CR>==gi", opts)
+keymap("i", "<A-Up>", "<ESC>:m .-2<CR>==gi", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-keymap("n", "<A-Down>", "<Esc>:m .+1<CR>", opts)
-keymap("n", "<A-Up>", "<Esc>:m .-2<CR>", opts)
+keymap("n", "<A-Down>", "<ESC>:m .+1<CR>==", opts)
+keymap("n", "<A-Up>", "<ESC>:m .-2<CR>==", opts)
 keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
@@ -64,12 +64,16 @@ keymap("n", "<leader>ff", ":Telescope find_files hidden=true<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fc", ":e $MYVIMRC <CR>") -- open config
 
 -- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gg", "<CMD>lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<leader>gl", ":Gitsigns blame_line<CR>", opts)
+keymap("n", "<leader>gd", ":Gitsigns diffthis HEAD~1<CR>", opts)
+
 
 -- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+keymap("n", "<leader>/", "<CMD>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
 
 -- DAP
@@ -85,3 +89,4 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 --smart_quit
 keymap("n", "<leader>q", "<cmd>lua require('user.functions').smart_quit()<CR>", opts)
+

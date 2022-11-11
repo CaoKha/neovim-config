@@ -1,13 +1,20 @@
 local servers = {
 	"sumneko_lua",
 	"cssls",
+	"cssmodules_ls",
 	"html",
 	"tsserver",
 	"pyright",
 	"bashls",
 	"jsonls",
 	"yamlls",
-  "rust_analyzer",
+	"rust_analyzer",
+	"angularls",
+	"eslint",
+	"clangd",
+	"sqlls",
+	"taplo",
+	"tailwindcss",
 }
 
 local settings = {
