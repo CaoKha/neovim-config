@@ -97,6 +97,7 @@ return packer.startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
