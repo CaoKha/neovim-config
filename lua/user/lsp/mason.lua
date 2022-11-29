@@ -1,8 +1,5 @@
 local servers = {
 	"sumneko_lua",
-	"cssls",
-	"cssmodules_ls",
-	"html",
 	"tsserver",
 	"pyright",
 	"bashls",
@@ -10,11 +7,8 @@ local servers = {
 	"yamlls",
 	"rust_analyzer",
 	"angularls",
-	"eslint",
 	"clangd",
-	"sqlls",
 	"taplo",
-	"tailwindcss",
 }
 
 local settings = {
