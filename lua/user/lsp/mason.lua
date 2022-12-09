@@ -9,6 +9,9 @@ local servers = {
 	"angularls",
 	"clangd",
 	"taplo",
+  "cssls",
+  "cssmodules_ls",
+  "html"
 }
 
 local settings = {
